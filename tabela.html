@@ -1,0 +1,858 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Caminho do Grêmio</title>
+    <meta charset="utf-8">
+	
+	<script type="text/javascript">
+	
+
+	
+	function favTutorial() {  
+	document.getElementById("result").disabled = true;
+	document.getElementById("resultRebaixado").disabled = true;
+	
+	var contadorPontos=10; //pontuação atual do gremio no campeonato 18/08
+
+for(var i=1; i<=23; i++){
+
+
+var mylist = document.getElementById("myList"+i);  
+document.getElementById("jogo"+i).value = mylist.options[mylist.selectedIndex].text;  
+
+
+if(mylist.options[mylist.selectedIndex].text=="Ganha"){
+document.getElementById("jogo"+i).textContent="3";
+contadorPontos = contadorPontos+3;
+}
+
+if(mylist.options[mylist.selectedIndex].text=="Empata"){
+document.getElementById("jogo"+i).textContent="1";
+contadorPontos= contadorPontos+1;
+}
+
+if(mylist.options[mylist.selectedIndex].text=="Perde"){
+document.getElementById("jogo"+i).textContent="0";
+}
+
+}
+
+document.getElementById("result").value = contadorPontos;
+
+if(contadorPontos<45){
+
+document.getElementById("resultRebaixado").value = "Rebaixado";
+
+
+
+}
+
+else{
+document.getElementById("resultRebaixado").value = "Permanece na Série A";
+}
+
+
+}  
+  
+</script>
+  </head>
+  <body>
+
+  <div class="container">
+  
+  <h1>Simulador de jogos do Grêmio
+  
+  <img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/03/12/gremio.svg"  >
+  
+  
+  
+  </h1>
+  
+  <div class="row">
+    <table style="height: 450px;" width="800" border>
+<tbody>
+<tr style="height: 36px;">
+<td style="height: 36px; width: 69.375px;">Local</td>
+<td style="height: 36px; width: 92.7344px;">Advers&aacute;rio</td>
+<td style="height: 36px; width: 99.5px;">Data</td>
+<td style="height: 36px; width: 143.391px;">Palpite</td>
+<td style="height: 36px; width: 35px;">Pontos</td>
+<td style="height: 36px; width: 35px;">
+
+Total
+
+</td>
+<td style="height: 36px; width: 35px;">Rebaixado</td>
+
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/12/26/Cuiaba_EC.svg"  >
+
+
+</td>
+<td style="height: 18px; width: 99.5px;">18/ago</td>
+<td style="height: 18px; width: 69.375px; " >
+
+<select id = "myList1" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>  
+
+
+
+</td>
+
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo1">
+
+<text/>
+
+
+</td>
+
+<td style="height: 18px; width: 35px;">
+
+
+<input type="text" id="result" size="2"  disabled=true>
+
+
+</td>
+<td style="height: 18px; 35px;">
+
+<input type="text" id="resultRebaixado" size="5" disabled=true>
+
+</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/03/11/bahia.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">21/ago</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList2" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>  
+
+
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo2">
+
+<text/>
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2019/09/30/Corinthians.svg">
+
+
+</td>
+<td style="height: 18px; width: 99.5px;">28/ago</td>
+<td style="height: 18px; width: 143.391px;">
+
+
+
+<select id = "myList3" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select> 
+
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo3">
+
+<text/>
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/03/10/atletico-mg.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">05/set</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList4" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select> 
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo4">
+
+<text/>
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2019/10/10/ceara.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">12/set</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList5" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select> 
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo5">
+
+<text/>
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/04/10/Flamengo-2018.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">19/set</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList6" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select> 
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo6">
+
+<text/>
+
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2019/09/09/Athletico-PR.svg">
+
+
+</td>
+<td style="height: 18px; width: 99.5px;">26/set</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList7" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select> 
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo7">
+
+<text/>
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/03/11/sport.svg">
+
+
+</td>
+<td style="height: 18px; width: 99.5px;">03/out</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList8" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+  
+  
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo8">
+
+<text/>
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/12/26/Cuiaba_EC.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">06/out</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList9" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+</td>
+<td style="height: 18px; width: 35px;">
+<text id="jogo9">
+
+<text/>
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/03/12/santos.svg">
+
+
+
+</td>
+<td style="height: 18px; width: 99.5px;">10/out</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList10" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo10">
+
+<text/>
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2021/04/13/fortaleza.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">13/out</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList11" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo11">
+
+<text/>
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2021/04/29/Juventude-2021-01.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">17/out</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList12" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo12">
+
+<text/>
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2020/07/02/atletico-go-2020.svg">
+
+
+</td>
+<td style="height: 18px; width: 99.5px;">24/out</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList13" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo13">
+
+<text/>
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2019/07/06/Palmeiras.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">31/out</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList14" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo14">
+
+<text/>
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/03/11/internacional.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">07/nov</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList15" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo15">
+
+<text/>
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/03/11/fluminense.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">10/nov</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList16" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo16">
+
+<text/>
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2019/02/28/America-MG-VERDE-fev2019-01.svg">
+
+
+</td>
+<td style="height: 18px; width: 99.5px;">14/nov</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList17" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo17">
+
+<text/>
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2021/06/28/bragantino.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">17/nov</td>
+<td style="height: 18px; width: 143.391px;">
+
+
+<select id = "myList18" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo18">
+
+<text/>
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2021/06/21/CHAPECOENSE-2018.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">21/nov</td>
+<td style="height: 18px; width: 143.391px;">
+
+
+<select id = "myList19" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo19">
+
+<text/>
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/03/11/sao-paulo.svg">
+
+
+</td>
+<td style="height: 18px; width: 99.5px;">24/nov</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList20" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo20">
+
+<text/>
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/03/11/bahia.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">28/nov</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList21" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo21">
+
+<text/>
+
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Fora</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2019/09/30/Corinthians.svg">
+
+</td>
+<td style="height: 18px; width: 99.5px;">01/dez</td>
+<td style="height: 18px; width: 143.391px;">
+
+<select id = "myList22" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo22">
+
+<text/>
+
+
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+
+
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 69.375px;">Casa</td>
+<td style="height: 18px; width: 92.7344px;">
+
+<img height="50" width="50" src="https://s.glbimg.com/es/sde/f/organizacoes/2018/03/10/atletico-mg.svg">
+
+
+</td>
+<td style="height: 18px; width: 99.5px;">05/dez</td>
+<td style="height: 18px; width: 143.391px;">
+
+
+<select id = "myList23" onchange = "favTutorial()" >  
+<option> Selecione o palpite </option>  
+<option> Ganha </option>  
+<option> Empata </option>  
+<option> Perde </option>  
+</select>
+
+
+</td>
+<td style="height: 18px; width: 35px;">
+
+<text id="jogo23">
+
+<text/>
+
+</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+<td style="height: 18px; width: 35px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+  </body>
+  </div>
+</html>
+
+
+
+
+
